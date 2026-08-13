@@ -1,106 +1,112 @@
-La Tua Idea ✦
-Shop
-Categorie
-Chi siamo
-Contatti
-🛍️ 0
-PERSONALIZZATO · PER TE
-La tua idea,
-resa unica.
-Oggetti e regali personalizzati dal design elegante, pensati per lei, per lui e per chiunque ami. Scegli, personalizza e crea qualcosa che parla davvero di te.
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Tua Idea — Personalizzati</title>
+<meta name="description" content="La Tua Idea: regali e oggetti personalizzati per lui, per lei e per tutti.">
+<style>
+:root{
+  --ink:#242124; --muted:#746c70; --cream:#f8f4f1; --white:#fff;
+  --blush:#ead9dc; --rose:#b77b87; --taupe:#c9b7aa; --line:#e8dfdc;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+a{text-decoration:none;color:inherit}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top{max-width:1180px;margin:auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-family:Georgia,serif;font-size:27px;letter-spacing:.5px}.logo span{color:var(--rose)}
+nav{display:flex;gap:25px;font-size:14px;font-weight:600}
+nav a:hover{color:var(--rose)}
+.cart{border:1px solid var(--line);padding:10px 14px;border-radius:22px;background:#fff}
+.hero{max-width:1180px;margin:auto;padding:70px 24px 55px;display:grid;grid-template-columns:1.05fr .95fr;gap:45px;align-items:center}
+.kicker{font-size:12px;letter-spacing:3px;font-weight:800;color:var(--rose)}
+h1{font-family:Georgia,serif;font-weight:400;font-size:clamp(48px,7vw,82px);line-height:.98;margin:15px 0}
+.hero p{font-size:18px;line-height:1.65;color:var(--muted);max-width:560px}
+.btn{display:inline-block;background:var(--ink);color:#fff;padding:14px 23px;border-radius:28px;font-weight:700;margin-top:12px}
+.visual{min-height:440px;border-radius:34px;background:linear-gradient(145deg,#eee0e0,#cdb8b2);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.visual:before{content:"";width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,.42);position:absolute;top:-60px;right:-40px}
+.visual:after{content:"LA TUA IDEA";position:absolute;bottom:25px;left:30px;font-family:Georgia,serif;font-size:14px;letter-spacing:4px}
+.package{width:230px;height:290px;background:#fff;border-radius:20px;box-shadow:0 25px 50px #4a3a3d30;display:flex;align-items:center;justify-content:center;flex-direction:column;transform:rotate(-5deg)}
+.package .mini{font-size:12px;letter-spacing:3px;color:var(--rose)}.package strong{font-family:Georgia,serif;font-size:32px;font-weight:400;margin-top:12px}.package small{margin-top:8px;color:var(--muted)}
+section{padding:75px 24px}.wrap{max-width:1180px;margin:auto}.section-head{text-align:center;margin-bottom:38px}.section-head .kicker{margin-bottom:10px}.section-head h2{font-family:Georgia,serif;font-size:42px;font-weight:400;margin:0}.section-head p{color:var(--muted);max-width:600px;margin:12px auto;line-height:1.6}
+.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cat{padding:28px 20px;background:#fff;border:1px solid var(--line);border-radius:22px;text-align:center;transition:.2s}.cat:hover{transform:translateY(-4px)}.cat .icon{font-size:34px}.cat h3{margin:12px 0 5px}.cat p{margin:0;color:var(--muted);font-size:13px}
+.shop{background:#fff}.filters{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:30px}.filter{border:1px solid var(--line);background:#fff;padding:9px 16px;border-radius:20px;cursor:pointer}.filter.active,.filter:hover{background:var(--ink);color:#fff}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.product{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden}.photo{height:245px;display:flex;align-items:center;justify-content:center;position:relative}.photo.c1{background:#eee2e2}.photo.c2{background:#e6e1db}.photo.c3{background:#dedde0}.photo.c4{background:#e8e3d8}
+.product-art{width:130px;height:160px;border-radius:12px;background:#fff;box-shadow:0 15px 35px #00000018;display:flex;align-items:center;justify-content:center;flex-direction:column;font-family:Georgia,serif}.product-art .small{font-family:Arial,sans-serif;font-size:9px;letter-spacing:2px;color:var(--rose)}.product-art .big{font-size:22px;margin-top:8px}
+.info{padding:17px}.info h3{margin:0 0 7px;font-size:17px}.info p{margin:0 0 12px;color:var(--muted);font-size:13px;line-height:1.45}.price{font-weight:800}.add{float:right;border:0;background:var(--ink);color:#fff;border-radius:18px;padding:8px 12px;cursor:pointer}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.story-card{background:var(--blush);border-radius:30px;padding:50px}.story h2{font-family:Georgia,serif;font-weight:400;font-size:43px;margin:0 0 15px}.story p{color:var(--muted);line-height:1.75}.list{display:grid;gap:14px}.list div{padding:16px 18px;background:#fff;border:1px solid var(--line);border-radius:15px}
+.how{background:#f1ebe7}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.step{text-align:center;background:#fff;padding:25px;border-radius:20px}.num{font-family:Georgia,serif;font-size:30px;color:var(--rose)}
+.contact{background:var(--ink);color:#fff;text-align:center}.contact p{color:#d7ced1;line-height:1.6}.contact .btn{background:#fff;color:var(--ink)}.contact a.mail{color:#fff;text-decoration:underline}
+footer{background:#191619;color:#bfb5b9;padding:35px 24px;text-align:center;font-size:13px}.footer-logo{font-family:Georgia,serif;color:#fff;font-size:24px;margin-bottom:10px}
+@media(max-width:850px){nav{display:none}.hero,.story{grid-template-columns:1fr}.categories{grid-template-columns:1fr 1fr}.products{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.hero{padding-top:45px}.visual{min-height:330px}.categories,.products,.steps{grid-template-columns:1fr}.section-head h2{font-size:34px}.story-card{padding:30px}}
+</style>
+</head>
+<body>
+<header><div class="top">
+<a class="logo" href="#">La Tua <span>Idea</span> ✦</a>
+<nav><a href="#shop">Shop</a><a href="#categorie">Categorie</a><a href="#chi-siamo">Chi siamo</a><a href="#contatti">Contatti</a></nav>
+<a class="cart" href="#shop">🛍️ <span id="count">0</span></a>
+</div></header>
 
-SCOPRI LO SHOP →
-LA TUA IDEA
-Personalizzato
-made for you
-TUTTO PER TUTTI
-Scegli il tuo stile
-Idee minimal, eleganti e personalizzabili per ogni persona e occasione.
+<main>
+<section class="hero">
+<div>
+<div class="kicker">PERSONALIZZATO · PER TE</div>
+<h1>La tua idea,<br>resa unica.</h1>
+<p>Oggetti e regali personalizzati dal design elegante, pensati <b>per lei, per lui e per chiunque ami.</b> Scegli, personalizza e crea qualcosa che parla davvero di te.</p>
+<a class="btn" href="#shop">SCOPRI LO SHOP →</a>
+</div>
+<div class="visual"><div class="package"><div class="mini">LA TUA IDEA</div><strong>Personalizzato</strong><small>made for you</small></div></div>
+</section>
 
-♡
-Per lei
-Regali delicati e chic
-◇
-Per lui
-Stile pulito e moderno
-∞
-Coppie
-Due persone, un ricordo
-✦
-Per tutti
-Idee per ogni occasione
-SHOP
-I nostri preferiti
-Questi sono solo alcuni esempi: puoi aggiungere i tuoi prodotti, foto e prezzi.
+<section id="categorie"><div class="wrap">
+<div class="section-head"><div class="kicker">TUTTO PER TUTTI</div><h2>Scegli il tuo stile</h2><p>Idee minimal, eleganti e personalizzabili per ogni persona e occasione.</p></div>
+<div class="categories">
+<a class="cat" href="#shop"><div class="icon">♡</div><h3>Per lei</h3><p>Regali delicati e chic</p></a>
+<a class="cat" href="#shop"><div class="icon">◇</div><h3>Per lui</h3><p>Stile pulito e moderno</p></a>
+<a class="cat" href="#shop"><div class="icon">∞</div><h3>Coppie</h3><p>Due persone, un ricordo</p></a>
+<a class="cat" href="#shop"><div class="icon">✦</div><h3>Per tutti</h3><p>Idee per ogni occasione</p></a>
+</div>
+</div></section>
 
-Tutti
-Per lei
-Per lui
-Coppie
-LA TUA IDEA
-♡ Nome
-Tazza Signature
-Nome, iniziali o frase personalizzata.
+<section class="shop" id="shop"><div class="wrap">
+<div class="section-head"><div class="kicker">SHOP</div><h2>I nostri preferiti</h2><p>Questi sono solo alcuni esempi: puoi aggiungere i tuoi prodotti, foto e prezzi.</p></div>
+<div class="filters"><button class="filter active" onclick="filter('all',this)">Tutti</button><button class="filter" onclick="filter('lei',this)">Per lei</button><button class="filter" onclick="filter('lui',this)">Per lui</button><button class="filter" onclick="filter('coppie',this)">Coppie</button></div>
+<div class="products">
+<article class="product" data-cat="lei"><div class="photo c1"><div class="product-art"><span class="small">LA TUA IDEA</span><span class="big">♡ Nome</span></div></div><div class="info"><h3>Tazza Signature</h3><p>Nome, iniziali o frase personalizzata.</p><span class="price">€ 14,90</span><button class="add" onclick="add()">+ Aggiungi</button></div></article>
+<article class="product" data-cat="lui"><div class="photo c2"><div class="product-art"><span class="small">LA TUA IDEA</span><span class="big">NOME</span></div></div><div class="info"><h3>Gift Box</h3><p>Un regalo elegante da personalizzare.</p><span class="price">€ 24,90</span><button class="add" onclick="add()">+ Aggiungi</button></div></article>
+<article class="product" data-cat="coppie"><div class="photo c3"><div class="product-art"><span class="small">EST. 2026</span><span class="big">A + M</span></div></div><div class="info"><h3>Couple Edition</h3><p>Nomi e data per un ricordo speciale.</p><span class="price">€ 19,90</span><button class="add" onclick="add()">+ Aggiungi</button></div></article>
+<article class="product" data-cat="all"><div class="photo c4"><div class="product-art"><span class="small">YOUR PET</span><span class="big">♡</span></div></div><div class="info"><h3>Pet Memory</h3><p>Un pensiero personalizzato per il tuo pet.</p><span class="price">€ 16,90</span><button class="add" onclick="add()">+ Aggiungi</button></div></article>
+</div>
+</div></section>
 
-€ 14,90+ Aggiungi
-LA TUA IDEA
-NOME
-Gift Box
-Un regalo elegante da personalizzare.
+<section id="chi-siamo"><div class="wrap story">
+<div class="story-card"><div class="kicker">CHI SIAMO</div><h2>Piccole idee,<br>grandi emozioni.</h2><p>La Tua Idea nasce per trasformare un nome, una data, una foto o una frase in qualcosa di davvero personale.</p></div>
+<div class="list"><div>✦ <b>Design elegante</b><br><small>Creazioni semplici e curate.</small></div><div>♡ <b>Per tutti</b><br><small>Idee per lei, per lui, coppie e amici.</small></div><div>✧ <b>Fatto per te</b><br><small>Ogni personalizzazione racconta una storia.</small></div></div>
+</div></section>
 
-€ 24,90+ Aggiungi
-EST. 2026
-A + M
-Couple Edition
-Nomi e data per un ricordo speciale.
+<section class="how" id="come"><div class="wrap">
+<div class="section-head"><div class="kicker">SEMPLICE</div><h2>Come funziona</h2></div>
+<div class="steps"><div class="step"><div class="num">01</div><h3>Scegli</h3><p>Scegli il prodotto.</p></div><div class="step"><div class="num">02</div><h3>Personalizza</h3><p>Nome, foto, frase o data.</p></div><div class="step"><div class="num">03</div><h3>Creiamo</h3><p>Prepariamo la tua idea.</p></div><div class="step"><div class="num">04</div><h3>Ricevi</h3><p>Spediamo il tuo ordine.</p></div></div>
+</div></section>
 
-€ 19,90+ Aggiungi
-YOUR PET
-♡
-Pet Memory
-Un pensiero personalizzato per il tuo pet.
+<section class="contact" id="contatti"><div class="wrap">
+<div class="kicker" style="color:#d9aeb9">CONTATTI</div><h2 style="font-family:Georgia,serif;font-size:44px;font-weight:400">Hai un'idea?</h2>
+<p>Raccontacela. Per ordini e personalizzazioni scrivici a<br><a class="mail" href="mailto:latuaidea.shop@gmail.com">latuaidea.shop@gmail.com</a></p>
+<a class="btn" href="mailto:latuaidea.shop@gmail.com">SCRIVICI VIA EMAIL</a>
+</div></section>
+</main>
 
-€ 16,90+ Aggiungi
-CHI SIAMO
-Piccole idee,
-grandi emozioni.
-La Tua Idea nasce per trasformare un nome, una data, una foto o una frase in qualcosa di davvero personale.
+<footer><div class="footer-logo">La Tua Idea ✦</div>Personalizzati per lei · per lui · per tutti<br><br>Instagram: @latuaidea.shop</footer>
 
-✦ Design elegante
-Creazioni semplici e curate.
-♡ Per tutti
-Idee per lei, per lui, coppie e amici.
-✧ Fatto per te
-Ogni personalizzazione racconta una storia.
-SEMPLICE
-Come funziona
-01
-Scegli
-
-Scegli il prodotto.
-
-02
-Personalizza
-
-Nome, foto, frase o data.
-
-03
-Creiamo
-
-Prepariamo la tua idea.
-
-04
-Ricevi
-
-Spediamo il tuo ordine.
-
-CONTATTI
-Hai un'idea?
-
-Raccontacela. Per ordini e personalizzazioni scrivici a
-latuaidea.shop@gmail.com
-
-SCRIVICI VIA EMAIL
-La Tua Idea ✦
-Personalizzati per lei · per lui · per tutti
-
+<script>
+let n=0;
+function add(){n++;document.getElementById('count').textContent=n;alert('Prodotto aggiunto al carrello ✦');}
+function filter(cat,btn){document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.product').forEach(p=>{p.style.display=(cat==='all'||p.dataset.cat===cat)?'block':'none';});}
+</script>
+</body></html>
