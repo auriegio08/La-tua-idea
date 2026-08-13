@@ -3,110 +3,2362 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>La Tua Idea — Personalizzati</title>
-<meta name="description" content="La Tua Idea: regali e oggetti personalizzati per lui, per lei e per tutti.">
+<meta name="description" content="La Tua Idea: regali e oggetti personalizzati per lei, per lui, per coppie e per tutti.">
+
 <style>
 :root{
-  --ink:#242124; --muted:#746c70; --cream:#f8f4f1; --white:#fff;
-  --blush:#ead9dc; --rose:#b77b87; --taupe:#c9b7aa; --line:#e8dfdc;
+  --ink:#242124;
+  --muted:#746c70;
+  --cream:#f8f4f1;
+  --white:#fff;
+  --blush:#ead9dc;
+  --rose:#b77b87;
+  --taupe:#c9b7aa;
+  --line:#e8dfdc;
 }
+
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
-a{text-decoration:none;color:inherit}
-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.top{max-width:1180px;margin:auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo{font-family:Georgia,serif;font-size:27px;letter-spacing:.5px}.logo span{color:var(--rose)}
-nav{display:flex;gap:25px;font-size:14px;font-weight:600}
-nav a:hover{color:var(--rose)}
-.cart{border:1px solid var(--line);padding:10px 14px;border-radius:22px;background:#fff}
-.hero{max-width:1180px;margin:auto;padding:70px 24px 55px;display:grid;grid-template-columns:1.05fr .95fr;gap:45px;align-items:center}
-.kicker{font-size:12px;letter-spacing:3px;font-weight:800;color:var(--rose)}
-h1{font-family:Georgia,serif;font-weight:400;font-size:clamp(48px,7vw,82px);line-height:.98;margin:15px 0}
-.hero p{font-size:18px;line-height:1.65;color:var(--muted);max-width:560px}
-.btn{display:inline-block;background:var(--ink);color:#fff;padding:14px 23px;border-radius:28px;font-weight:700;margin-top:12px}
-.visual{min-height:440px;border-radius:34px;background:linear-gradient(145deg,#eee0e0,#cdb8b2);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.visual:before{content:"";width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,.42);position:absolute;top:-60px;right:-40px}
-.visual:after{content:"LA TUA IDEA";position:absolute;bottom:25px;left:30px;font-family:Georgia,serif;font-size:14px;letter-spacing:4px}
-.package{width:230px;height:290px;background:#fff;border-radius:20px;box-shadow:0 25px 50px #4a3a3d30;display:flex;align-items:center;justify-content:center;flex-direction:column;transform:rotate(-5deg)}
-.package .mini{font-size:12px;letter-spacing:3px;color:var(--rose)}.package strong{font-family:Georgia,serif;font-size:32px;font-weight:400;margin-top:12px}.package small{margin-top:8px;color:var(--muted)}
-section{padding:75px 24px}.wrap{max-width:1180px;margin:auto}.section-head{text-align:center;margin-bottom:38px}.section-head .kicker{margin-bottom:10px}.section-head h2{font-family:Georgia,serif;font-size:42px;font-weight:400;margin:0}.section-head p{color:var(--muted);max-width:600px;margin:12px auto;line-height:1.6}
-.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.cat{padding:28px 20px;background:#fff;border:1px solid var(--line);border-radius:22px;text-align:center;transition:.2s}.cat:hover{transform:translateY(-4px)}.cat .icon{font-size:34px}.cat h3{margin:12px 0 5px}.cat p{margin:0;color:var(--muted);font-size:13px}
-.shop{background:#fff}.filters{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:30px}.filter{border:1px solid var(--line);background:#fff;padding:9px 16px;border-radius:20px;cursor:pointer}.filter.active,.filter:hover{background:var(--ink);color:#fff}
-.products{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.product{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden}.photo{height:245px;display:flex;align-items:center;justify-content:center;position:relative}.photo.c1{background:#eee2e2}.photo.c2{background:#e6e1db}.photo.c3{background:#dedde0}.photo.c4{background:#e8e3d8}
-.product-art{width:130px;height:160px;border-radius:12px;background:#fff;box-shadow:0 15px 35px #00000018;display:flex;align-items:center;justify-content:center;flex-direction:column;font-family:Georgia,serif}.product-art .small{font-family:Arial,sans-serif;font-size:9px;letter-spacing:2px;color:var(--rose)}.product-art .big{font-size:22px;margin-top:8px}
-.info{padding:17px}.info h3{margin:0 0 7px;font-size:17px}.info p{margin:0 0 12px;color:var(--muted);font-size:13px;line-height:1.45}.price{font-weight:800}.add{float:right;border:0;background:var(--ink);color:#fff;border-radius:18px;padding:8px 12px;cursor:pointer}
-.story{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.story-card{background:var(--blush);border-radius:30px;padding:50px}.story h2{font-family:Georgia,serif;font-weight:400;font-size:43px;margin:0 0 15px}.story p{color:var(--muted);line-height:1.75}.list{display:grid;gap:14px}.list div{padding:16px 18px;background:#fff;border:1px solid var(--line);border-radius:15px}
-.how{background:#f1ebe7}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.step{text-align:center;background:#fff;padding:25px;border-radius:20px}.num{font-family:Georgia,serif;font-size:30px;color:var(--rose)}
-.contact{background:var(--ink);color:#fff;text-align:center}.contact p{color:#d7ced1;line-height:1.6}.contact .btn{background:#fff;color:var(--ink)}.contact a.mail{color:#fff;text-decoration:underline}
-footer{background:#191619;color:#bfb5b9;padding:35px 24px;text-align:center;font-size:13px}.footer-logo{font-family:Georgia,serif;color:#fff;font-size:24px;margin-bottom:10px}
-@media(max-width:850px){nav{display:none}.hero,.story{grid-template-columns:1fr}.categories{grid-template-columns:1fr 1fr}.products{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.hero{padding-top:45px}.visual{min-height:330px}.categories,.products,.steps{grid-template-columns:1fr}.section-head h2{font-size:34px}.story-card{padding:30px}}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+body.no-scroll{
+  overflow:hidden;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+button{
+  font-family:inherit;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+
+.top{
+  max-width:1180px;
+  margin:auto;
+  padding:18px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.logo{
+  font-family:Georgia,serif;
+  font-size:27px;
+  letter-spacing:.5px;
+}
+
+.logo span{
+  color:var(--rose);
+}
+
+nav{
+  display:flex;
+  gap:25px;
+  font-size:14px;
+  font-weight:600;
+}
+
+nav a:hover{
+  color:var(--rose);
+}
+
+.cart{
+  border:1px solid var(--line);
+  padding:10px 14px;
+  border-radius:22px;
+  background:#fff;
+  cursor:pointer;
+  font-size:15px;
+}
+
+.cart:hover{
+  background:var(--ink);
+  color:#fff;
+}
+
+.hero{
+  max-width:1180px;
+  margin:auto;
+  padding:70px 24px 55px;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:45px;
+  align-items:center;
+}
+
+.kicker{
+  font-size:12px;
+  letter-spacing:3px;
+  font-weight:800;
+  color:var(--rose);
+}
+
+h1{
+  font-family:Georgia,serif;
+  font-weight:400;
+  font-size:clamp(48px,7vw,82px);
+  line-height:.98;
+  margin:15px 0;
+}
+
+.hero p{
+  font-size:18px;
+  line-height:1.65;
+  color:var(--muted);
+  max-width:560px;
+}
+
+.btn{
+  display:inline-block;
+  border:0;
+  background:var(--ink);
+  color:#fff;
+  padding:14px 23px;
+  border-radius:28px;
+  font-weight:700;
+  margin-top:12px;
+  cursor:pointer;
+}
+
+.btn:hover{
+  opacity:.88;
+}
+
+.visual{
+  min-height:440px;
+  border-radius:34px;
+  background:linear-gradient(145deg,#eee0e0,#cdb8b2);
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.visual:before{
+  content:"";
+  width:280px;
+  height:280px;
+  border-radius:50%;
+  background:rgba(255,255,255,.42);
+  position:absolute;
+  top:-60px;
+  right:-40px;
+}
+
+.visual:after{
+  content:"LA TUA IDEA";
+  position:absolute;
+  bottom:25px;
+  left:30px;
+  font-family:Georgia,serif;
+  font-size:14px;
+  letter-spacing:4px;
+}
+
+.package{
+  width:230px;
+  height:290px;
+  background:#fff;
+  border-radius:20px;
+  box-shadow:0 25px 50px #4a3a3d30;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  transform:rotate(-5deg);
+}
+
+.package .mini{
+  font-size:12px;
+  letter-spacing:3px;
+  color:var(--rose);
+}
+
+.package strong{
+  font-family:Georgia,serif;
+  font-size:32px;
+  font-weight:400;
+  margin-top:12px;
+}
+
+.package small{
+  margin-top:8px;
+  color:var(--muted);
+}
+
+section{
+  padding:75px 24px;
+}
+
+.wrap{
+  max-width:1180px;
+  margin:auto;
+}
+
+.section-head{
+  text-align:center;
+  margin-bottom:38px;
+}
+
+.section-head .kicker{
+  margin-bottom:10px;
+}
+
+.section-head h2{
+  font-family:Georgia,serif;
+  font-size:42px;
+  font-weight:400;
+  margin:0;
+}
+
+.section-head p{
+  color:var(--muted);
+  max-width:600px;
+  margin:12px auto;
+  line-height:1.6;
+}
+
+/* CATEGORIE */
+
+.categories{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+
+.cat{
+  padding:28px 20px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:22px;
+  text-align:center;
+  transition:.2s;
+  cursor:pointer;
+}
+
+.cat:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 30px #0000000d;
+}
+
+.cat .icon{
+  font-size:34px;
+}
+
+.cat h3{
+  margin:12px 0 5px;
+}
+
+.cat p{
+  margin:0;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* SHOP */
+
+.shop{
+  background:#fff;
+}
+
+.filters{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:30px;
+}
+
+.filter{
+  border:1px solid var(--line);
+  background:#fff;
+  padding:9px 16px;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+.filter.active,
+.filter:hover{
+  background:var(--ink);
+  color:#fff;
+}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.product{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:20px;
+  overflow:hidden;
+  transition:.2s;
+}
+
+.product:hover{
+  transform:translateY(-4px);
+  box-shadow:0 15px 35px #00000012;
+}
+
+.photo{
+  height:245px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.photo.c1{
+  background:#eee2e2;
+}
+
+.photo.c2{
+  background:#e6e1db;
+}
+
+.photo.c3{
+  background:#dedde0;
+}
+
+.photo.c4{
+  background:#e8e3d8;
+}
+
+.photo.c5{
+  background:#e5d9dc;
+}
+
+.photo.c6{
+  background:#ded9d2;
+}
+
+.photo.c7{
+  background:#e1dfe2;
+}
+
+.photo.c8{
+  background:#e7dfd7;
+}
+
+.product-art{
+  width:130px;
+  height:160px;
+  border-radius:12px;
+  background:#fff;
+  box-shadow:0 15px 35px #00000018;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  font-family:Georgia,serif;
+}
+
+.product-art .small{
+  font-family:Arial,sans-serif;
+  font-size:9px;
+  letter-spacing:2px;
+  color:var(--rose);
+}
+
+.product-art .big{
+  font-size:22px;
+  margin-top:8px;
+  text-align:center;
+}
+
+.info{
+  padding:17px;
+}
+
+.info h3{
+  margin:0 0 7px;
+  font-size:17px;
+}
+
+.info p{
+  margin:0 0 12px;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.45;
+}
+
+.price{
+  font-weight:800;
+}
+
+.open-product{
+  width:100%;
+  margin-top:13px;
+  border:0;
+  background:var(--ink);
+  color:#fff;
+  padding:11px;
+  border-radius:18px;
+  cursor:pointer;
+  font-weight:700;
+}
+
+.open-product:hover{
+  opacity:.88;
+}
+
+/* STORY */
+
+.story{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+}
+
+.story-card{
+  background:var(--blush);
+  border-radius:30px;
+  padding:50px;
+}
+
+.story h2{
+  font-family:Georgia,serif;
+  font-weight:400;
+  font-size:43px;
+  margin:0 0 15px;
+}
+
+.story p{
+  color:var(--muted);
+  line-height:1.75;
+}
+
+.list{
+  display:grid;
+  gap:14px;
+}
+
+.list div{
+  padding:16px 18px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:15px;
+}
+
+/* HOW */
+
+.how{
+  background:#f1ebe7;
+}
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.step{
+  text-align:center;
+  background:#fff;
+  padding:25px;
+  border-radius:20px;
+}
+
+.num{
+  font-family:Georgia,serif;
+  font-size:30px;
+  color:var(--rose);
+}
+
+/* CONTACT */
+
+.contact{
+  background:var(--ink);
+  color:#fff;
+  text-align:center;
+}
+
+.contact p{
+  color:#d7ced1;
+  line-height:1.6;
+}
+
+.contact .btn{
+  background:#fff;
+  color:var(--ink);
+}
+
+.contact a.mail{
+  color:#fff;
+  text-decoration:underline;
+}
+
+/* FOOTER */
+
+footer{
+  background:#191619;
+  color:#bfb5b9;
+  padding:35px 24px;
+  text-align:center;
+  font-size:13px;
+}
+
+.footer-logo{
+  font-family:Georgia,serif;
+  color:#fff;
+  font-size:24px;
+  margin-bottom:10px;
+}
+
+/* MODALE PRODOTTO */
+
+.modal-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(20,16,18,.65);
+  z-index:100;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.modal-overlay.show{
+  display:flex;
+}
+
+.product-modal{
+  width:min(900px,100%);
+  max-height:90vh;
+  overflow:auto;
+  background:#fff;
+  border-radius:28px;
+  position:relative;
+  padding:30px;
+}
+
+.close{
+  position:absolute;
+  top:15px;
+  right:18px;
+  width:38px;
+  height:38px;
+  border:0;
+  border-radius:50%;
+  background:#f2ecea;
+  cursor:pointer;
+  font-size:20px;
+}
+
+.modal-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:35px;
+}
+
+.modal-image{
+  min-height:380px;
+  border-radius:24px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.modal-image .product-art{
+  transform:scale(1.35);
+}
+
+.modal-info h2{
+  font-family:Georgia,serif;
+  font-weight:400;
+  font-size:38px;
+  margin:0 0 10px;
+}
+
+.modal-description{
+  color:var(--muted);
+  line-height:1.6;
+}
+
+.modal-price{
+  font-size:24px;
+  font-weight:800;
+  margin:20px 0;
+}
+
+.custom-box{
+  margin:20px 0;
+}
+
+.custom-box label{
+  display:block;
+  font-weight:700;
+  margin-bottom:8px;
+}
+
+.custom-box input,
+.custom-box textarea,
+.custom-box select{
+  width:100%;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:13px;
+  font-size:15px;
+  outline:none;
+  background:#fff;
+}
+
+.custom-box input:focus,
+.custom-box textarea:focus,
+.custom-box select:focus{
+  border-color:var(--rose);
+}
+
+.custom-box textarea{
+  min-height:100px;
+  resize:vertical;
+}
+
+.add-cart-large{
+  width:100%;
+  border:0;
+  background:var(--ink);
+  color:#fff;
+  padding:16px;
+  border-radius:25px;
+  font-weight:800;
+  cursor:pointer;
+  font-size:15px;
+}
+
+.add-cart-large:hover{
+  opacity:.9;
+}
+
+/* CARRELLO */
+
+.cart-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(20,16,18,.5);
+  z-index:120;
+  display:none;
+}
+
+.cart-overlay.show{
+  display:block;
+}
+
+.cart-panel{
+  position:absolute;
+  top:0;
+  right:0;
+  width:min(470px,100%);
+  height:100%;
+  background:#fff;
+  display:flex;
+  flex-direction:column;
+  box-shadow:-15px 0 50px #00000025;
+}
+
+.cart-header{
+  padding:22px;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.cart-header h2{
+  font-family:Georgia,serif;
+  font-weight:400;
+  margin:0;
+  font-size:30px;
+}
+
+.cart-close{
+  border:0;
+  background:#f2ecea;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  cursor:pointer;
+  font-size:18px;
+}
+
+.cart-items{
+  flex:1;
+  overflow:auto;
+  padding:20px;
+}
+
+.empty-cart{
+  text-align:center;
+  color:var(--muted);
+  padding:60px 20px;
+}
+
+.cart-item{
+  border:1px solid var(--line);
+  border-radius:17px;
+  padding:15px;
+  margin-bottom:14px;
+}
+
+.cart-item-top{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.cart-item h3{
+  margin:0 0 6px;
+  font-size:16px;
+}
+
+.cart-item-price{
+  font-weight:800;
+}
+
+.customization{
+  font-size:12px;
+  color:var(--muted);
+  margin:8px 0;
+  line-height:1.5;
+}
+
+.quantity{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:12px;
+}
+
+.quantity button{
+  border:1px solid var(--line);
+  background:#fff;
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  cursor:pointer;
+}
+
+.quantity span{
+  min-width:20px;
+  text-align:center;
+  font-weight:700;
+}
+
+.remove{
+  border:0;
+  background:none;
+  color:#9b5f6c;
+  cursor:pointer;
+  font-size:12px;
+  padding:0;
+}
+
+.cart-footer{
+  border-top:1px solid var(--line);
+  padding:20px;
+}
+
+.total-row{
+  display:flex;
+  justify-content:space-between;
+  font-size:20px;
+  font-weight:800;
+  margin-bottom:15px;
+}
+
+.checkout{
+  width:100%;
+  border:0;
+  background:var(--ink);
+  color:#fff;
+  padding:15px;
+  border-radius:24px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.checkout:hover{
+  opacity:.88;
+}
+
+.checkout-note{
+  color:var(--muted);
+  text-align:center;
+  font-size:11px;
+  margin-top:10px;
+}
+
+/* TOAST */
+
+.toast{
+  position:fixed;
+  left:50%;
+  bottom:25px;
+  transform:translateX(-50%) translateY(100px);
+  background:var(--ink);
+  color:#fff;
+  padding:13px 20px;
+  border-radius:25px;
+  z-index:200;
+  opacity:0;
+  transition:.3s;
+  pointer-events:none;
+  font-size:14px;
+}
+
+.toast.show{
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:850px){
+
+  nav{
+    display:none;
+  }
+
+  .hero,
+  .story{
+    grid-template-columns:1fr;
+  }
+
+  .categories{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .products{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .steps{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .modal-grid{
+    grid-template-columns:1fr;
+  }
+
+  .modal-image{
+    min-height:280px;
+  }
+}
+
+@media(max-width:520px){
+
+  .top{
+    padding:15px 16px;
+  }
+
+  .logo{
+    font-size:23px;
+  }
+
+  .hero{
+    padding:45px 18px 40px;
+  }
+
+  section{
+    padding:60px 18px;
+  }
+
+  .visual{
+    min-height:330px;
+  }
+
+  .categories,
+  .products,
+  .steps{
+    grid-template-columns:1fr;
+  }
+
+  .section-head h2{
+    font-size:34px;
+  }
+
+  .story-card{
+    padding:30px;
+  }
+
+  .product-modal{
+    padding:22px;
+    border-radius:22px;
+  }
+
+  .modal-info h2{
+    font-size:30px;
+  }
+}
 </style>
 </head>
+
 <body>
-<header><div class="top">
-<a class="logo" href="#">La Tua <span>Idea</span> ✦</a>
-<nav><a href="#shop">Shop</a><a href="#categorie">Categorie</a><a href="#chi-siamo">Chi siamo</a><a href="#contatti">Contatti</a></nav>
-<a class="cart" href="#shop">🛍️ <span id="count">0</span></a>
-</div></header>
+
+<header>
+<div class="top">
+
+<a class="logo" href="#">
+  La Tua <span>Idea</span> ✦
+</a>
+
+<nav>
+  <a href="#shop">Shop</a>
+  <a href="#categorie">Categorie</a>
+  <a href="#chi-siamo">Chi siamo</a>
+  <a href="#contatti">Contatti</a>
+</nav>
+
+<button class="cart" onclick="openCart()">
+  🛍️ <span id="count">0</span>
+</button>
+
+</div>
+</header>
+
 
 <main>
+
+<!-- HERO -->
+
 <section class="hero">
+
 <div>
-<div class="kicker">PERSONALIZZATO · PER TE</div>
-<h1>La tua idea,<br>resa unica.</h1>
-<p>Oggetti e regali personalizzati dal design elegante, pensati <b>per lei, per lui e per chiunque ami.</b> Scegli, personalizza e crea qualcosa che parla davvero di te.</p>
-<a class="btn" href="#shop">SCOPRI LO SHOP →</a>
+
+<div class="kicker">
+PERSONALIZZATO · PER TE
 </div>
-<div class="visual"><div class="package"><div class="mini">LA TUA IDEA</div><strong>Personalizzato</strong><small>made for you</small></div></div>
+
+<h1>
+La tua idea,<br>
+resa unica.
+</h1>
+
+<p>
+Oggetti e regali personalizzati dal design elegante,
+pensati <b>per lei, per lui e per chiunque ami.</b>
+Scegli, personalizza e crea qualcosa che parla davvero di te.
+</p>
+
+<a class="btn" href="#categorie">
+SCOPRI LO SHOP →
+</a>
+
+</div>
+
+
+<div class="visual">
+
+<div class="package">
+
+<div class="mini">
+LA TUA IDEA
+</div>
+
+<strong>
+Personalizzato
+</strong>
+
+<small>
+made for you
+</small>
+
+</div>
+
+</div>
+
 </section>
 
-<section id="categorie"><div class="wrap">
-<div class="section-head"><div class="kicker">TUTTO PER TUTTI</div><h2>Scegli il tuo stile</h2><p>Idee minimal, eleganti e personalizzabili per ogni persona e occasione.</p></div>
+
+<!-- CATEGORIE -->
+
+<section id="categorie">
+
+<div class="wrap">
+
+<div class="section-head">
+
+<div class="kicker">
+TUTTO PER TUTTI
+</div>
+
+<h2>
+Scegli per chi è
+</h2>
+
+<p>
+Trova il regalo perfetto e personalizzalo come vuoi.
+</p>
+
+</div>
+
+
 <div class="categories">
-<a class="cat" href="#shop"><div class="icon">♡</div><h3>Per lei</h3><p>Regali delicati e chic</p></a>
-<a class="cat" href="#shop"><div class="icon">◇</div><h3>Per lui</h3><p>Stile pulito e moderno</p></a>
-<a class="cat" href="#shop"><div class="icon">∞</div><h3>Coppie</h3><p>Due persone, un ricordo</p></a>
-<a class="cat" href="#shop"><div class="icon">✦</div><h3>Per tutti</h3><p>Idee per ogni occasione</p></a>
+
+<div class="cat" onclick="showCategory('lei')">
+
+<div class="icon">
+♡
 </div>
-</div></section>
 
-<section class="shop" id="shop"><div class="wrap">
-<div class="section-head"><div class="kicker">SHOP</div><h2>I nostri preferiti</h2><p>Questi sono solo alcuni esempi: puoi aggiungere i tuoi prodotti, foto e prezzi.</p></div>
-<div class="filters"><button class="filter active" onclick="filter('all',this)">Tutti</button><button class="filter" onclick="filter('lei',this)">Per lei</button><button class="filter" onclick="filter('lui',this)">Per lui</button><button class="filter" onclick="filter('coppie',this)">Coppie</button></div>
-<div class="products">
-<article class="product" data-cat="lei"><div class="photo c1"><div class="product-art"><span class="small">LA TUA IDEA</span><span class="big">♡ Nome</span></div></div><div class="info"><h3>Tazza Signature</h3><p>Nome, iniziali o frase personalizzata.</p><span class="price">€ 14,90</span><button class="add" onclick="add()">+ Aggiungi</button></div></article>
-<article class="product" data-cat="lui"><div class="photo c2"><div class="product-art"><span class="small">LA TUA IDEA</span><span class="big">NOME</span></div></div><div class="info"><h3>Gift Box</h3><p>Un regalo elegante da personalizzare.</p><span class="price">€ 24,90</span><button class="add" onclick="add()">+ Aggiungi</button></div></article>
-<article class="product" data-cat="coppie"><div class="photo c3"><div class="product-art"><span class="small">EST. 2026</span><span class="big">A + M</span></div></div><div class="info"><h3>Couple Edition</h3><p>Nomi e data per un ricordo speciale.</p><span class="price">€ 19,90</span><button class="add" onclick="add()">+ Aggiungi</button></div></article>
-<article class="product" data-cat="all"><div class="photo c4"><div class="product-art"><span class="small">YOUR PET</span><span class="big">♡</span></div></div><div class="info"><h3>Pet Memory</h3><p>Un pensiero personalizzato per il tuo pet.</p><span class="price">€ 16,90</span><button class="add" onclick="add()">+ Aggiungi</button></div></article>
+<h3>
+Per lei
+</h3>
+
+<p>
+Regali delicati e chic
+</p>
+
 </div>
-</div></section>
 
-<section id="chi-siamo"><div class="wrap story">
-<div class="story-card"><div class="kicker">CHI SIAMO</div><h2>Piccole idee,<br>grandi emozioni.</h2><p>La Tua Idea nasce per trasformare un nome, una data, una foto o una frase in qualcosa di davvero personale.</p></div>
-<div class="list"><div>✦ <b>Design elegante</b><br><small>Creazioni semplici e curate.</small></div><div>♡ <b>Per tutti</b><br><small>Idee per lei, per lui, coppie e amici.</small></div><div>✧ <b>Fatto per te</b><br><small>Ogni personalizzazione racconta una storia.</small></div></div>
-</div></section>
 
-<section class="how" id="come"><div class="wrap">
-<div class="section-head"><div class="kicker">SEMPLICE</div><h2>Come funziona</h2></div>
-<div class="steps"><div class="step"><div class="num">01</div><h3>Scegli</h3><p>Scegli il prodotto.</p></div><div class="step"><div class="num">02</div><h3>Personalizza</h3><p>Nome, foto, frase o data.</p></div><div class="step"><div class="num">03</div><h3>Creiamo</h3><p>Prepariamo la tua idea.</p></div><div class="step"><div class="num">04</div><h3>Ricevi</h3><p>Spediamo il tuo ordine.</p></div></div>
-</div></section>
+<div class="cat" onclick="showCategory('lui')">
 
-<section class="contact" id="contatti"><div class="wrap">
-<div class="kicker" style="color:#d9aeb9">CONTATTI</div><h2 style="font-family:Georgia,serif;font-size:44px;font-weight:400">Hai un'idea?</h2>
-<p>Raccontacela. Per ordini e personalizzazioni scrivici a<br><a class="mail" href="mailto:latuaidea.shop@gmail.com">latuaidea.shop@gmail.com</a></p>
-<a class="btn" href="mailto:latuaidea.shop@gmail.com">SCRIVICI VIA EMAIL</a>
-</div></section>
+<div class="icon">
+◇
+</div>
+
+<h3>
+Per lui
+</h3>
+
+<p>
+Stile pulito e moderno
+</p>
+
+</div>
+
+
+<div class="cat" onclick="showCategory('coppie')">
+
+<div class="icon">
+∞
+</div>
+
+<h3>
+Coppie
+</h3>
+
+<p>
+Due persone, un ricordo
+</p>
+
+</div>
+
+
+<div class="cat" onclick="showCategory('tutti')">
+
+<div class="icon">
+✦
+</div>
+
+<h3>
+Per tutti
+</h3>
+
+<p>
+Idee per ogni occasione
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SHOP -->
+
+<section class="shop" id="shop">
+
+<div class="wrap">
+
+<div class="section-head">
+
+<div class="kicker">
+SHOP
+</div>
+
+<h2>
+I nostri prodotti
+</h2>
+
+<p>
+Scegli un prodotto, personalizzalo e aggiungilo al carrello.
+</p>
+
+</div>
+
+
+<div class="filters">
+
+<button class="filter active" onclick="filterProducts('all',this)">
+Tutti
+</button>
+
+<button class="filter" onclick="filterProducts('lei',this)">
+♡ Per lei
+</button>
+
+<button class="filter" onclick="filterProducts('lui',this)">
+◇ Per lui
+</button>
+
+<button class="filter" onclick="filterProducts('coppie',this)">
+∞ Coppie
+</button>
+
+<button class="filter" onclick="filterProducts('tutti',this)">
+✦ Per tutti
+</button>
+
+</div>
+
+
+<div class="products" id="products"></div>
+
+</div>
+
+</section>
+
+
+<!-- CHI SIAMO -->
+
+<section id="chi-siamo">
+
+<div class="wrap story">
+
+<div class="story-card">
+
+<div class="kicker">
+CHI SIAMO
+</div>
+
+<h2>
+Piccole idee,<br>
+grandi emozioni.
+</h2>
+
+<p>
+La Tua Idea nasce per trasformare un nome,
+una data, una foto o una frase in qualcosa
+di davvero personale.
+</p>
+
+</div>
+
+
+<div class="list">
+
+<div>
+✦ <b>Design elegante</b><br>
+<small>Creazioni semplici e curate.</small>
+</div>
+
+<div>
+♡ <b>Per tutti</b><br>
+<small>Idee per lei, per lui, coppie e amici.</small>
+</div>
+
+<div>
+✧ <b>Fatto per te</b><br>
+<small>Ogni personalizzazione racconta una storia.</small>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- COME FUNZIONA -->
+
+<section class="how" id="come">
+
+<div class="wrap">
+
+<div class="section-head">
+
+<div class="kicker">
+SEMPLICE
+</div>
+
+<h2>
+Come funziona
+</h2>
+
+</div>
+
+
+<div class="steps">
+
+<div class="step">
+<div class="num">01</div>
+<h3>Scegli</h3>
+<p>Scegli il prodotto che ami.</p>
+</div>
+
+<div class="step">
+<div class="num">02</div>
+<h3>Personalizza</h3>
+<p>Nome, frase, data o dedica.</p>
+</div>
+
+<div class="step">
+<div class="num">03</div>
+<h3>Aggiungi</h3>
+<p>Metti il prodotto nel carrello.</p>
+</div>
+
+<div class="step">
+<div class="num">04</div>
+<h3>Ricevi</h3>
+<p>Prepariamo e spediamo il tuo ordine.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTATTI -->
+
+<section class="contact" id="contatti">
+
+<div class="wrap">
+
+<div class="kicker" style="color:#d9aeb9">
+CONTATTI
+</div>
+
+<h2 style="font-family:Georgia,serif;font-size:44px;font-weight:400">
+Hai un'idea?
+</h2>
+
+<p>
+Raccontacela. Per ordini e personalizzazioni scrivici a<br>
+
+<a class="mail" href="mailto:latuaidea.shop@gmail.com">
+latuaidea.shop@gmail.com
+</a>
+
+</p>
+
+<a class="btn" href="mailto:latuaidea.shop@gmail.com">
+SCRIVICI VIA EMAIL
+</a>
+
+</div>
+
+</section>
+
 </main>
 
-<footer><div class="footer-logo">La Tua Idea ✦</div>Personalizzati per lei · per lui · per tutti<br><br>Instagram: @latuaidea.shop</footer>
+
+<footer>
+
+<div class="footer-logo">
+La Tua Idea ✦
+</div>
+
+Personalizzati per lei · per lui · per tutti
+
+<br><br>
+
+Instagram: @latuaidea.shop
+
+</footer>
+
+
+<!-- MODALE PRODOTTO -->
+
+<div class="modal-overlay" id="productModal">
+
+<div class="product-modal">
+
+<button class="close" onclick="closeProduct()">
+×
+</button>
+
+<div class="modal-grid">
+
+<div class="modal-image" id="modalImage"></div>
+
+
+<div class="modal-info">
+
+<div class="kicker" id="modalCategory">
+PERSONALIZZATO
+</div>
+
+<h2 id="modalTitle">
+Prodotto
+</h2>
+
+<p class="modal-description" id="modalDescription"></p>
+
+<div class="modal-price" id="modalPrice">
+€ 0,00
+</div>
+
+
+<div id="customFields"></div>
+
+
+<button class="add-cart-large" onclick="addCurrentProduct()">
+AGGIUNGI AL CARRELLO
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- CARRELLO -->
+
+<div class="cart-overlay" id="cartOverlay" onclick="closeCartOutside(event)">
+
+<div class="cart-panel">
+
+<div class="cart-header">
+
+<h2>
+Il tuo carrello
+</h2>
+
+<button class="cart-close" onclick="closeCart()">
+×
+</button>
+
+</div>
+
+
+<div class="cart-items" id="cartItems"></div>
+
+
+<div class="cart-footer">
+
+<div class="total-row">
+
+<span>
+Totale
+</span>
+
+<span id="cartTotal">
+€ 0,00
+</span>
+
+</div>
+
+<button class="checkout" onclick="checkout()">
+PROCEDI ALL'ORDINE →
+</button>
+
+<div class="checkout-note">
+Il riepilogo dell'ordine verrà preparato prima dell'acquisto.
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="toast" id="toast">
+Prodotto aggiunto al carrello ✦
+</div>
+
 
 <script>
-let n=0;
-function add(){n++;document.getElementById('count').textContent=n;alert('Prodotto aggiunto al carrello ✦');}
-function filter(cat,btn){document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.product').forEach(p=>{p.style.display=(cat==='all'||p.dataset.cat===cat)?'block':'none';});}
+
+/* =========================================================
+   CATALOGO
+========================================================= */
+
+const products = [
+
+/* PER LEI */
+
+{
+ id:1,
+ name:"Tazza Signature",
+ category:"lei",
+ price:14.90,
+ color:"c1",
+ art:"♡ Nome",
+ description:"Una tazza elegante personalizzata con nome, iniziali o frase.",
+ fields:[
+   {type:"text",name:"Nome o iniziali",placeholder:"Es. Aurora"},
+   {type:"textarea",name:"Frase",placeholder:"Scrivi una frase personalizzata..."}
+ ]
+},
+
+{
+ id:2,
+ name:"Bracciale Personalizzato",
+ category:"lei",
+ price:19.90,
+ color:"c5",
+ art:"♡ A",
+ description:"Un piccolo gioiello da rendere unico con una dedica speciale.",
+ fields:[
+   {type:"text",name:"Nome / iniziali",placeholder:"Es. A"},
+   {type:"text",name:"Dedica",placeholder:"Es. Per sempre"}
+ ]
+},
+
+{
+ id:3,
+ name:"Candela Signature",
+ category:"lei",
+ price:17.90,
+ color:"c1",
+ art:"LOVE",
+ description:"Una candela dal design minimal con personalizzazione.",
+ fields:[
+   {type:"text",name:"Nome",placeholder:"Es. Sofia"},
+   {type:"text",name:"Frase",placeholder:"Es. Casa mia"}
+ ]
+},
+
+{
+ id:4,
+ name:"Gift Box Deluxe",
+ category:"lei",
+ price:29.90,
+ color:"c5",
+ art:"GIFT",
+ description:"Una box regalo elegante da personalizzare.",
+ fields:[
+   {type:"text",name:"Nome",placeholder:"Es. Giulia"},
+   {type:"textarea",name:"Messaggio",placeholder:"Scrivi il tuo messaggio..."}
+ ]
+},
+
+/* PER LUI */
+
+{
+ id:5,
+ name:"Tazza Minimal",
+ category:"lui",
+ price:14.90,
+ color:"c2",
+ art:"NOME",
+ description:"Tazza dal design pulito con nome o iniziali.",
+ fields:[
+   {type:"text",name:"Nome",placeholder:"Es. Luca"},
+   {type:"text",name:"Iniziali",placeholder:"Es. LM"}
+ ]
+},
+
+{
+ id:6,
+ name:"Portachiavi Personalizzato",
+ category:"lui",
+ price:16.90,
+ color:"c6",
+ art:"N +",
+ description:"Un portachiavi semplice e personale.",
+ fields:[
+   {type:"text",name:"Nome",placeholder:"Es. Marco"},
+   {type:"text",name:"Data",placeholder:"Es. 13.08.2026"}
+ ]
+},
+
+{
+ id:7,
+ name:"Gift Box Uomo",
+ category:"lui",
+ price:24.90,
+ color:"c2",
+ art:"GIFT",
+ description:"Una box pensata per un regalo speciale.",
+ fields:[
+   {type:"text",name:"Nome",placeholder:"Es. Andrea"},
+   {type:"textarea",name:"Dedica",placeholder:"Scrivi una dedica..."}
+ ]
+},
+
+{
+ id:8,
+ name:"Felpa Personalizzata",
+ category:"lui",
+ price:39.90,
+ color:"c6",
+ art:"NOME",
+ description:"Felpa personalizzabile con nome, iniziali o frase.",
+ fields:[
+   {type:"text",name:"Nome / iniziali",placeholder:"Es. AM"},
+   {type:"textarea",name:"Frase",placeholder:"Scrivi la frase..."},
+   {type:"select",name:"Taglia",options:["S","M","L","XL","XXL"]}
+ ]
+},
+
+/* COPPIE */
+
+{
+ id:9,
+ name:"Couple Edition",
+ category:"coppie",
+ price:19.90,
+ color:"c3",
+ art:"A + M",
+ description:"Un ricordo speciale per due persone.",
+ fields:[
+   {type:"text",name:"Nome 1",placeholder:"Es. Aurora"},
+   {type:"text",name:"Nome 2",placeholder:"Es. Marco"},
+   {type:"text",name:"Data",placeholder:"Es. 13.08.2026"}
+ ]
+},
+
+{
+ id:10,
+ name:"Tazze Couple",
+ category:"coppie",
+ price:27.90,
+ color:"c3",
+ art:"♡♡",
+ description:"Due tazze coordinate personalizzate per la coppia.",
+ fields:[
+   {type:"text",name:"Nome 1",placeholder:"Nome"},
+   {type:"text",name:"Nome 2",placeholder:"Nome"},
+   {type:"text",name:"Data",placeholder:"Data speciale"}
+ ]
+},
+
+{
+ id:11,
+ name:"Felpe Couple",
+ category:"coppie",
+ price:69.90,
+ color:"c3",
+ art:"∞",
+ description:"Set di felpe coordinate per due persone.",
+ fields:[
+   {type:"text",name:"Nome 1",placeholder:"Nome"},
+   {type:"text",name:"Nome 2",placeholder:"Nome"},
+   {type:"select",name:"Taglia 1",options:["S","M","L","XL"]},
+   {type:"select",name:"Taglia 2",options:["S","M","L","XL"]}
+ ]
+},
+
+{
+ id:12,
+ name:"Love Box",
+ category:"coppie",
+ price:34.90,
+ color:"c3",
+ art:"LOVE",
+ description:"Una box romantica personalizzata con nomi e data.",
+ fields:[
+   {type:"text",name:"Nomi",placeholder:"Es. Aurora & Marco"},
+   {type:"text",name:"Data",placeholder:"Es. 13.08.2026"},
+   {type:"textarea",name:"Dedica",placeholder:"La vostra dedica..."}
+ ]
+},
+
+/* PER TUTTI */
+
+{
+ id:13,
+ name:"Pet Memory",
+ category:"tutti",
+ price:16.90,
+ color:"c4",
+ art:"♡ PET",
+ description:"Un ricordo personalizzato dedicato al tuo animale.",
+ fields:[
+   {type:"text",name:"Nome del pet",placeholder:"Es. Leo"},
+   {type:"text",name:"Data",placeholder:"Es. 2026"},
+   {type:"textarea",name:"Dedica",placeholder:"Scrivi una dedica..."}
+ ]
+},
+
+{
+ id:14,
+ name:"Cover Personalizzata",
+ category:"tutti",
+ price:18.90,
+ color:"c7",
+ art:"♡",
+ description:"Una cover personalizzata con nome, iniziali o frase.",
+ fields:[
+   {type:"text",name:"Nome / iniziali",placeholder:"Es. A"},
+   {type:"textarea",name:"Frase",placeholder:"Scrivi la frase..."}
+ ]
+},
+
+{
+ id:15,
+ name:"Portachiavi Family",
+ category:"tutti",
+ price:16.90,
+ color:"c4",
+ art:"FAMILY",
+ description:"Un piccolo regalo per ricordare le persone che ami.",
+ fields:[
+   {type:"text",name:"Nome",placeholder:"Nome"},
+   {type:"textarea",name:"Dedica",placeholder:"Scrivi una dedica..."}
+ ]
+},
+
+{
+ id:16,
+ name:"Poster Personalizzato",
+ category:"tutti",
+ price:22.90,
+ color:"c8",
+ art:"YOUR",
+ description:"Una stampa elegante da personalizzare con una frase speciale.",
+ fields:[
+   {type:"text",name:"Titolo",placeholder:"Es. La nostra storia"},
+   {type:"textarea",name:"Testo",placeholder:"Scrivi il testo del poster..."}
+ ]
+}
+
+];
+
+
+/* =========================================================
+   STATO
+========================================================= */
+
+let cart = JSON.parse(localStorage.getItem("latuaidea_cart")) || [];
+
+let currentProduct = null;
+
+
+/* =========================================================
+   PREZZI
+========================================================= */
+
+function euro(value){
+
+  return new Intl.NumberFormat("it-IT",{
+    style:"currency",
+    currency:"EUR"
+  }).format(value);
+
+}
+
+
+/* =========================================================
+   RENDER PRODOTTI
+========================================================= */
+
+function renderProducts(category="all"){
+
+  const container = document.getElementById("products");
+
+  container.innerHTML="";
+
+  const list = category==="all"
+    ? products
+    : products.filter(p=>p.category===category);
+
+
+  list.forEach(product=>{
+
+    const article=document.createElement("article");
+
+    article.className="product";
+
+    article.innerHTML=`
+
+      <div class="photo ${product.color}">
+
+        <div class="product-art">
+
+          <span class="small">
+            LA TUA IDEA
+          </span>
+
+          <span class="big">
+            ${product.art}
+          </span>
+
+        </div>
+
+      </div>
+
+      <div class="info">
+
+        <h3>
+          ${product.name}
+        </h3>
+
+        <p>
+          ${product.description}
+        </p>
+
+        <span class="price">
+          ${euro(product.price)}
+        </span>
+
+        <button
+          class="open-product"
+          onclick="openProduct(${product.id})">
+
+          PERSONALIZZA →
+
+        </button>
+
+      </div>
+    `;
+
+    container.appendChild(article);
+
+  });
+
+}
+
+
+/* =========================================================
+   FILTRI
+========================================================= */
+
+function filterProducts(category,button){
+
+  document
+    .querySelectorAll(".filter")
+    .forEach(x=>x.classList.remove("active"));
+
+  button.classList.add("active");
+
+  renderProducts(category);
+
+  document
+    .getElementById("shop")
+    .scrollIntoView({behavior:"smooth"});
+
+}
+
+
+function showCategory(category){
+
+  const buttons=document.querySelectorAll(".filter");
+
+  let index={
+    all:0,
+    lei:1,
+    lui:2,
+    coppie:3,
+    tutti:4
+  }[category];
+
+  buttons.forEach(x=>x.classList.remove("active"));
+
+  if(buttons[index]){
+    buttons[index].classList.add("active");
+  }
+
+  renderProducts(category);
+
+  document
+    .getElementById("shop")
+    .scrollIntoView({behavior:"smooth"});
+
+}
+
+
+/* =========================================================
+   SCHEDA PRODOTTO
+========================================================= */
+
+function openProduct(id){
+
+  currentProduct=products.find(p=>p.id===id);
+
+  if(!currentProduct) return;
+
+  document.getElementById("modalTitle").textContent=
+    currentProduct.name;
+
+  document.getElementById("modalDescription").textContent=
+    currentProduct.description;
+
+  document.getElementById("modalPrice").textContent=
+    euro(currentProduct.price);
+
+  document.getElementById("modalCategory").textContent=
+    getCategoryName(currentProduct.category);
+
+
+  document.getElementById("modalImage").className=
+    "modal-image "+currentProduct.color;
+
+  document.getElementById("modalImage").innerHTML=`
+
+    <div class="product-art">
+
+      <span class="small">
+        LA TUA IDEA
+      </span>
+
+      <span class="big">
+        ${currentProduct.art}
+      </span>
+
+    </div>
+  `;
+
+
+  const fields=document.getElementById("customFields");
+
+  fields.innerHTML="";
+
+
+  currentProduct.fields.forEach((field,index)=>{
+
+    const box=document.createElement("div");
+
+    box.className="custom-box";
+
+    let html=`
+      <label>
+        ${field.name}
+      </label>
+    `;
+
+
+    if(field.type==="select"){
+
+      html+=`
+        <select id="custom-${index}">
+          ${field.options.map(option=>`
+            <option value="${option}">
+              ${option}
+            </option>
+          `).join("")}
+        </select>
+      `;
+
+    }
+
+    else if(field.type==="textarea"){
+
+      html+=`
+        <textarea
+          id="custom-${index}"
+          placeholder="${field.placeholder || ""}">
+        </textarea>
+      `;
+
+    }
+
+    else{
+
+      html+=`
+        <input
+          id="custom-${index}"
+          type="text"
+          placeholder="${field.placeholder || ""}">
+      `;
+
+    }
+
+    box.innerHTML=html;
+
+    fields.appendChild(box);
+
+  });
+
+
+  document
+    .getElementById("productModal")
+    .classList.add("show");
+
+  document.body.classList.add("no-scroll");
+
+}
+
+
+function closeProduct(){
+
+  document
+    .getElementById("productModal")
+    .classList.remove("show");
+
+  document.body.classList.remove("no-scroll");
+
+  currentProduct=null;
+
+}
+
+
+/* =========================================================
+   AGGIUNTA AL CARRELLO
+========================================================= */
+
+function addCurrentProduct(){
+
+  if(!currentProduct) return;
+
+
+  const customization=[];
+
+
+  currentProduct.fields.forEach((field,index)=>{
+
+    const element=document.getElementById(`custom-${index}`);
+
+    if(!element) return;
+
+    const value=element.value.trim();
+
+    if(value){
+
+      customization.push({
+        name:field.name,
+        value:value
+      });
+
+    }
+
+  });
+
+
+  const item={
+
+    cartId:
+      Date.now()+"-"+Math.random().toString(36).slice(2),
+
+    productId:currentProduct.id,
+
+    name:currentProduct.name,
+
+    price:currentProduct.price,
+
+    quantity:1,
+
+    customization:customization
+
+  };
+
+
+  cart.push(item);
+
+  saveCart();
+
+  updateCart();
+
+  closeProduct();
+
+  showToast("Prodotto aggiunto al carrello ✦");
+
+}
+
+
+/* =========================================================
+   CARRELLO
+========================================================= */
+
+function saveCart(){
+
+  localStorage.setItem(
+    "latuaidea_cart",
+    JSON.stringify(cart)
+  );
+
+}
+
+
+function updateCart(){
+
+  const container=
+    document.getElementById("cartItems");
+
+  const count=
+    document.getElementById("count");
+
+
+  const totalQuantity=
+    cart.reduce(
+      (sum,item)=>sum+item.quantity,
+      0
+    );
+
+
+  count.textContent=totalQuantity;
+
+
+  if(cart.length===0){
+
+    container.innerHTML=`
+
+      <div class="empty-cart">
+
+        <div style="font-size:45px">
+          🛍️
+        </div>
+
+        <h3>
+          Il tuo carrello è vuoto
+        </h3>
+
+        <p>
+          Scopri i nostri prodotti personalizzati.
+        </p>
+
+      </div>
+
+    `;
+
+    document.getElementById("cartTotal").textContent=
+      euro(0);
+
+    return;
+
+  }
+
+
+  container.innerHTML="";
+
+
+  cart.forEach(item=>{
+
+    const element=document.createElement("div");
+
+    element.className="cart-item";
+
+
+    const customizationText=
+      item.customization.length
+      ? item.customization
+          .map(c=>`<b>${c.name}:</b> ${escapeHtml(c.value)}`)
+          .join("<br>")
+      : "Nessuna personalizzazione";
+
+
+    element.innerHTML=`
+
+      <div class="cart-item-top">
+
+        <div>
+
+          <h3>
+            ${item.name}
+          </h3>
+
+          <div class="customization">
+            ${customizationText}
+          </div>
+
+        </div>
+
+        <div class="cart-item-price">
+          ${euro(item.price * item.quantity)}
+        </div>
+
+      </div>
+
+
+      <div style="
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        margin-top:10px;
+      ">
+
+        <div class="quantity">
+
+          <button onclick="changeQuantity('${item.cartId}',-1)">
+            −
+          </button>
+
+          <span>
+            ${item.quantity}
+          </span>
+
+          <button onclick="changeQuantity('${item.cartId}',1)">
+            +
+          </button>
+
+        </div>
+
+
+        <button
+          class="remove"
+          onclick="removeItem('${item.cartId}')">
+
+          ELIMINA
+
+        </button>
+
+      </div>
+
+    `;
+
+
+    container.appendChild(element);
+
+  });
+
+
+  const total=
+    cart.reduce(
+      (sum,item)=>
+        sum+(item.price*item.quantity),
+      0
+    );
+
+
+  document.getElementById("cartTotal").textContent=
+    euro(total);
+
+}
+
+
+function changeQuantity(cartId,change){
+
+  const item=
+    cart.find(x=>x.cartId===cartId);
+
+  if(!item) return;
+
+
+  item.quantity+=change;
+
+
+  if(item.quantity<=0){
+
+    cart=
+      cart.filter(x=>x.cartId!==cartId);
+
+  }
+
+
+  saveCart();
+
+  updateCart();
+
+}
+
+
+function removeItem(cartId){
+
+  cart=
+    cart.filter(x=>x.cartId!==cartId);
+
+  saveCart();
+
+  updateCart();
+
+}
+
+
+/* =========================================================
+   APRI / CHIUDI CARRELLO
+========================================================= */
+
+function openCart(){
+
+  document
+    .getElementById("cartOverlay")
+    .classList.add("show");
+
+  document.body.classList.add("no-scroll");
+
+  updateCart();
+
+}
+
+
+function closeCart(){
+
+  document
+    .getElementById("cartOverlay")
+    .classList.remove("show");
+
+  document.body.classList.remove("no-scroll");
+
+}
+
+
+function closeCartOutside(event){
+
+  if(event.target.id==="cartOverlay"){
+    closeCart();
+  }
+
+}
+
+
+/* =========================================================
+   CHECKOUT
+========================================================= */
+
+function checkout(){
+
+  if(cart.length===0){
+
+    showToast("Il carrello è vuoto");
+
+    return;
+
+  }
+
+
+  let message=
+    "Ciao! Vorrei effettuare questo ordine:%0A%0A";
+
+
+  cart.forEach(item=>{
+
+    message+=
+      `• ${item.name} x${item.quantity} — ${euro(item.price*item.quantity)}%0A`;
+
+    item.customization.forEach(c=>{
+
+      message+=
+        `  ${c.name}: ${c.value}%0A`;
+
+    });
+
+    message+="%0A";
+
+  });
+
+
+  const total=
+    cart.reduce(
+      (sum,item)=>
+        sum+(item.price*item.quantity),
+      0
+    );
+
+
+  message+=
+    `Totale ordine: ${euro(total)}`;
+
+
+  window.location.href=
+    "mailto:latuaidea.shop@gmail.com?subject=Nuovo ordine La Tua Idea&body="+message;
+
+}
+
+
+/* =========================================================
+   CATEGORIE
+========================================================= */
+
+function getCategoryName(category){
+
+  const names={
+
+    lei:"♡ PER LEI",
+    lui:"◇ PER LUI",
+    coppie:"∞ COPPIE",
+    tutti:"✦ PER TUTTI"
+
+  };
+
+  return names[category] || "PERSONALIZZATO";
+
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+function showToast(message){
+
+  const toast=
+    document.getElementById("toast");
+
+  toast.textContent=message;
+
+  toast.classList.add("show");
+
+  setTimeout(()=>{
+
+    toast.classList.remove("show");
+
+  },2500);
+
+}
+
+
+/* =========================================================
+   SICUREZZA TESTO
+========================================================= */
+
+function escapeHtml(text){
+
+  const div=document.createElement("div");
+
+  div.textContent=text;
+
+  return div.innerHTML;
+
+}
+
+
+/* =========================================================
+   CHIUSURA MODALE CON CLICK FUORI
+========================================================= */
+
+document
+  .getElementById("productModal")
+  .addEventListener("click",function(event){
+
+    if(event.target===this){
+
+      closeProduct();
+
+    }
+
+  });
+
+
+/* =========================================================
+   AVVIO
+========================================================= */
+
+renderProducts();
+
+updateCart();
+
 </script>
-</body></html>
+
+</body>
+</html>
+
