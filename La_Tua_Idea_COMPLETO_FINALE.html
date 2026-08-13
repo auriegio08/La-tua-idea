@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Tua Idea — Personalizzati</title>
+<meta name="description" content="La Tua Idea — oggetti e regali personalizzati dal design elegante, pensati per lei, per lui e per chiunque ami.">
+<style>
+:root{--ink:#242124;--muted:#746c70;--cream:#f8f4f1;--white:#fff;--blush:#ead9dc;--rose:#c98f9c;--rose-dark:#a96f7d;--line:#e8dfe1;--soft:#f4e9eb}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}a{color:inherit;text-decoration:none}.btn{display:inline-block;padding:15px 25px;border-radius:999px;background:var(--ink);color:#fff;font-weight:700;font-size:14px;transition:.2s}.btn:hover{transform:translateY(-2px);background:var(--rose-dark)}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav{max-width:1180px;margin:auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}.logo{font-family:Georgia,serif;font-size:24px;font-weight:700}.logo span{color:var(--rose-dark)}nav{display:flex;gap:22px;font-size:14px}nav a:hover{color:var(--rose-dark)}
+.hero{max-width:1180px;margin:auto;min-height:650px;padding:80px 24px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:60px}.eyebrow{text-transform:uppercase;letter-spacing:3px;font-size:12px;color:var(--rose-dark);font-weight:700;margin-bottom:18px}h1{font-family:Georgia,serif;font-size:clamp(48px,7vw,82px);line-height:.98;font-weight:500;margin-bottom:26px}.hero p{max-width:650px;color:var(--muted);font-size:18px;margin-bottom:32px}.hero-art{min-height:470px;border-radius:34px;background:radial-gradient(circle at 25% 25%,#fff 0 12%,transparent 13%),radial-gradient(circle at 75% 70%,#fff 0 10%,transparent 11%),linear-gradient(145deg,var(--blush),#f8eef0 55%,#ead9dc);display:flex;align-items:center;justify-content:center;box-shadow:0 25px 70px rgba(80,45,55,.12)}.hero-card{background:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.8);width:70%;padding:45px 28px;border-radius:25px;text-align:center}.hero-card .star{font-size:34px;color:var(--rose-dark)}.hero-card h2{font-family:Georgia,serif;font-size:34px;margin:12px 0}.hero-card p{font-size:14px;margin:0;color:var(--muted)}
+section{padding:85px 24px}.container{max-width:1180px;margin:auto}.section-head{text-align:center;max-width:720px;margin:0 auto 45px}.section-head h2{font-family:Georgia,serif;font-size:42px;font-weight:500;margin-bottom:12px}.section-head p{color:var(--muted)}
+.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.category{min-height:190px;border:1px solid var(--line);border-radius:24px;background:#fff;padding:28px;display:flex;flex-direction:column;justify-content:flex-end;transition:.2s}.category:hover{transform:translateY(-4px);box-shadow:0 15px 35px rgba(80,45,55,.08)}.category .icon{font-size:30px;margin-bottom:auto}.category h3{font-family:Georgia,serif;font-size:23px}.category p{color:var(--muted);font-size:13px}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.product{background:#fff;border:1px solid var(--line);border-radius:25px;overflow:hidden}.product-image{height:250px;background:linear-gradient(145deg,#f7e9eb,#ead9dc);display:flex;align-items:center;justify-content:center;color:var(--rose-dark);font-family:Georgia,serif;font-size:28px}.product-body{padding:24px}.product-body h3{font-family:Georgia,serif;font-size:24px}.product-body p{color:var(--muted);font-size:14px;margin:8px 0 18px}.price{font-weight:700}
+.custom{background:var(--soft)}.custom-box{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}.custom-text h2{font-family:Georgia,serif;font-size:45px;font-weight:500;margin-bottom:15px}.custom-text p{color:var(--muted);margin-bottom:20px}.note{background:#fff;border-left:4px solid var(--rose);padding:18px 20px;border-radius:14px;font-size:14px}.colors{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}.swatch{width:42px;height:42px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 1px var(--line)}.sw1{background:#ead9dc}.sw2{background:#f4cdd4}.sw3{background:#d9c2b0}.sw4{background:#e7e2d5}.sw5{background:#c7d0ca}.sw6{background:#242124}.color-label{font-size:13px;color:var(--muted);margin-top:10px}.custom-options{background:#fff;border:1px solid var(--line);border-radius:25px;padding:30px}.option{display:flex;align-items:center;gap:14px;padding:15px 0;border-bottom:1px solid var(--line)}.option:last-child{border-bottom:0}.option-icon{width:45px;height:45px;border-radius:50%;background:var(--blush);display:grid;place-items:center}.option strong{display:block}.option span{font-size:13px;color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.step{text-align:center;padding:28px;background:#fff;border:1px solid var(--line);border-radius:24px}.number{width:45px;height:45px;border-radius:50%;background:var(--blush);display:grid;place-items:center;margin:0 auto 18px;font-weight:700;color:var(--rose-dark)}.step h3{font-family:Georgia,serif;font-size:22px;margin-bottom:8px}.step p{color:var(--muted);font-size:14px}
+.contact{text-align:center;background:var(--ink);color:#fff}.contact h2{font-family:Georgia,serif;font-size:45px;font-weight:500;margin-bottom:12px}.contact p{color:#d9d2d4;max-width:650px;margin:0 auto 25px}.contact .btn{background:#fff;color:var(--ink)}.contact .btn:hover{background:var(--blush)}footer{background:#1c1a1b;color:#cfc7c9;padding:28px 24px;text-align:center;font-size:13px}
+@media(max-width:800px){nav{display:none}.hero{grid-template-columns:1fr;padding-top:55px;min-height:auto}.hero-art{min-height:350px}.categories{grid-template-columns:1fr 1fr}.products,.steps,.custom-box{grid-template-columns:1fr}}@media(max-width:500px){section{padding:65px 18px}.hero{padding-left:18px;padding-right:18px}.categories{grid-template-columns:1fr}h1{font-size:53px}}
+</style>
+</head>
+<body>
+<header><div class="nav"><a class="logo" href="#">La Tua <span>Idea ✦</span></a><nav><a href="#shop">Shop</a><a href="#personalizza">Personalizza</a><a href="#come-funziona">Come funziona</a><a href="#contatti">Contatti</a></nav></div></header>
+<main>
+<section class="hero"><div><div class="eyebrow">Personalizzato · Per te</div><h1>La tua idea,<br>resa unica.</h1><p>Oggetti e regali personalizzati dal design elegante, pensati per lei, per lui e per chiunque ami. Scegli, personalizza e crea qualcosa che parla davvero di te.</p><a class="btn" href="#shop">SCOPRI LO SHOP →</a></div><div class="hero-art"><div class="hero-card"><div class="star">✦</div><h2>LA TUA IDEA</h2><p>Personalizzato · made for you</p></div></div></section>
+<section id="shop"><div class="container"><div class="section-head"><div class="eyebrow">La nostra selezione</div><h2>Tutto per la tua idea.</h2><p>Scopri le categorie e trova l'articolo perfetto da rendere davvero tuo.</p></div><div class="categories"><a class="category" href="#prodotti"><div class="icon">♡</div><h3>Per lei</h3><p>Idee delicate, eleganti e personalizzabili.</p></a><a class="category" href="#prodotti"><div class="icon">✦</div><h3>Per lui</h3><p>Regali originali pensati per ogni occasione.</p></a><a class="category" href="#prodotti"><div class="icon">♧</div><h3>Per tutti</h3><p>Creazioni personalizzate senza limiti.</p></a><a class="category" href="#personalizza"><div class="icon">✎</div><h3>Su richiesta</h3><p>Hai un'idea particolare? Possiamo crearla insieme.</p></a></div></div></section>
+
+<section id="prodotti">
+<div class="container">
+<div class="section-head">
+<div class="eyebrow">Articoli personalizzabili</div>
+<h2>Scegli. Personalizza. Crea.</h2>
+<p>Ogni articolo può diventare qualcosa di speciale grazie ai dettagli che scegli tu.</p>
+</div>
+<div class="products">
+
+<article class="product">
+  <div class="product-image">La tua idea</div>
+  <div class="product-body">
+    <h3>Tazza Signature</h3>
+    <p>Per lei · Nome + frase</p>
+    <div class="price">€ 14,90</div>
+    <button class="btn" style="border:0;margin-top:14px;width:100%;" onclick="openProduct(1)">PERSONALIZZA →</button>
+  </div>
+</article>
+<article class="product">
+  <div class="product-image">La tua idea</div>
+  <div class="product-body">
+    <h3>Bracciale Personalizzato</h3>
+    <p>Per lei · Iniziali + dedica</p>
+    <div class="price">€ 19,90</div>
+    <button class="btn" style="border:0;margin-top:14px;width:100%;" onclick="openProduct(2)">PERSONALIZZA →</button>
+  </div>
+</article>
+<article class="product">
+  <div class="product-image">La tua idea</div>
+  <div class="product-body">
+    <h3>Candela Signature</h3>
+    <p>Per lei · Nome + frase</p>
+    <div class="price">€ 17,90</div>
+    <button class="btn" style="border:0;margin-top:14px;width:100%;" onclick="openProduct(3)">PERSONALIZZA →</button>
+  </div>
+</article>
+<article class="product">
+  <div class="product-image">La tua idea</div>
+  <div class="product-body">
+    <h3>Gift Box Deluxe</h3>
+    <p>Per lei · Nome + messaggio</p>
+    <div class="price">€ 29,90</div>
+    <button class="btn" style="border:0;margin-top:14px;width:100%;" onclick="openProduct(4)">PERSONALIZZA →</button>
+  </div>
+</article>
+<article class="product">
+  <div class="product-image">La tua idea</div>
+  <div class="product-body">
+    <h3>Tazza Minimal</h3>
+    <p>Per lui · Nome + iniziali</p>
+    <div class="price">€ 14,90</div>
+    <button class="btn" style="border:0;margin-top:14px;width:100%;" onclick="openProduct(5)">PERSONALIZZA →</button>
+  </div>
+</article>
+<article class="product">
+  <div class="product-image">La tua idea</div>
+  <div class="product-body">
+    <h3>Portachiavi Personalizzato</h3>
+    <p>Per lui · Nome + data</p>
+    <div class="price">€ 16,90</div>
+    <button class="btn" style="border:0;margin-top:14px;width:100%;" onclick="openProduct(6)">PERSONALIZZA →</button>
+  </div>
+</article>
+<article class="product">
+  <div class="product-image">La tua idea</div>
+  <div class="product-body">
+    <h3>Gift Box Uomo</h3>
+    <p>Per lui · Nome + dedica</p>
+    <div class="price">€ 24,90</div>
+    <button class="btn" style="border:0;margin-top:14px;width:100%;" onclick="openProduct(7)">PERSONALIZZA →</button>
+  </div>
+</article>
+<article class="product">
+  <div class="product-image">La tua idea</div>
+  <div class="product-body">
+    <h3>Felpa Personalizzata</h3>
+    <p>Per lui · Nome + frase + taglia</p>
+    <div class="price">€ 39,90</div>
+    <button class="btn" style="border:0;margin-top:14px;width:100%;" onclick="openProduct(8)">PERSONALIZZA →</button>
+  </div>
+</article>
+<article class="product">
+  <div class="product-image">La tua idea</div>
+  <div class="product-body">
+    <h3>Couple Edition</h3>
+    <p>Coppie · 2 nomi + data</p>
+    <div class="price">€ 19,90</div>
+    <button class="btn" style="border:0;margin-top:14px;width:100%;" onclick="openProduct(9)">PERSONALIZZA →</button>
+  </div>
+</article>
+<article class="product">
+  <div class="product-image">La tua idea</div>
+  <div class="product-body">
+    <h3>Tazze Couple</h3>
+    <p>Coppie · 2 nomi + data</p>
+    <div class="price">€ 27,90</div>
+    <button class="btn" style="border:0;margin-top:14px;width:100%;" onclick="openProduct(10)">PERSONALIZZA →</button>
+  </div>
+</article>
+<article class="product">
+  <div class="product-image">La tua idea</div>
+  <div class="product-body">
+    <h3>Felpe Couple</h3>
+    <p>Coppie · 2 nomi + 2 taglie</p>
+    <div class="price">€ 69,90</div>
+    <button class="btn" style="border:0;margin-top:14px;width:100%;" onclick="openProduct(11)">PERSONALIZZA →</button>
+  </div>
+</article>
+<article class="product">
+  <div class="product-image">La tua idea</div>
+  <div class="product-body">
+    <h3>Love Box</h3>
+    <p>Coppie · Nomi + data + dedica</p>
+    <div class="price">€ 34,90</div>
+    <button class="btn" style="border:0;margin-top:14px;width:100%;" onclick="openProduct(12)">PERSONALIZZA →</button>
+  </div>
+</article>
+<article class="product">
+  <div class="product-image">La tua idea</div>
+  <div class="product-body">
+    <h3>Pet Memory</h3>
+    <p>Per tutti · Nome pet + data + dedica</p>
+    <div class="price">€ 16,90</div>
+    <button class="btn" style="border:0;margin-top:14px;width:100%;" onclick="openProduct(13)">PERSONALIZZA →</button>
+  </div>
+</article>
+<article class="product">
+  <div class="product-image">La tua idea</div>
+  <div class="product-body">
+    <h3>Cover Personalizzata</h3>
+    <p>Per tutti · Nome + frase</p>
+    <div class="price">€ 18,90</div>
+    <button class="btn" style="border:0;margin-top:14px;width:100%;" onclick="openProduct(14)">PERSONALIZZA →</button>
+  </div>
+</article>
+<article class="product">
+  <div class="product-image">La tua idea</div>
+  <div class="product-body">
+    <h3>Portachiavi Family</h3>
+    <p>Per tutti · Nome + dedica</p>
+    <div class="price">€ 16,90</div>
+    <button class="btn" style="border:0;margin-top:14px;width:100%;" onclick="openProduct(15)">PERSONALIZZA →</button>
+  </div>
+</article>
+<article class="product">
+  <div class="product-image">La tua idea</div>
+  <div class="product-body">
+    <h3>Poster Personalizzato</h3>
+    <p>Per tutti · Titolo + testo</p>
+    <div class="price">€ 22,90</div>
+    <button class="btn" style="border:0;margin-top:14px;width:100%;" onclick="openProduct(16)">PERSONALIZZA →</button>
+  </div>
+</article>
+</div>
+</div>
+</section>
+
+<section id="personalizza" class="custom"><div class="container custom-box"><div class="custom-text"><div class="eyebrow">Crea il tuo pezzo</div><h2>La personalizzazione parte da te.</h2><p>Puoi scegliere ciò che desideri inserire e indicare le caratteristiche che vuoi per il tuo articolo: scritte, nomi, frasi, grafiche, stile, colori e altri dettagli.</p><div class="note"><strong>Hai in mente un articolo o una grafica che non trovi sul sito?</strong><br>Nessun problema: descrivi la tua idea nel modo più preciso possibile e scrivici all'e-mail. Valuteremo la richiesta e cercheremo di realizzare una soluzione il più possibile fedele a ciò che immagini.</div><div class="colors"><div class="swatch sw1" title="Rosa cipria"></div><div class="swatch sw2" title="Rosa"></div><div class="swatch sw3" title="Nude"></div><div class="swatch sw4" title="Crema"></div><div class="swatch sw5" title="Verde salvia"></div><div class="swatch sw6" title="Nero"></div></div><div class="color-label">Esempi di palette disponibili — i colori possono essere adattati al progetto.</div></div><div class="custom-options"><div class="option"><div class="option-icon">Aa</div><div><strong>Testi e nomi</strong><span>Inserisci una frase, un nome o una dedica.</span></div></div><div class="option"><div class="option-icon">✦</div><div><strong>Grafiche</strong><span>Scegli uno stile o raccontaci la tua idea.</span></div></div><div class="option"><div class="option-icon">◌</div><div><strong>Colori</strong><span>Rosa, cipria, nude, crema, salvia, nero e altre tonalità.</span></div></div><div class="option"><div class="option-icon">♡</div><div><strong>Dettagli</strong><span>Ogni elemento può essere pensato in base alle tue esigenze.</span></div></div></div></div></section>
+<section id="come-funziona"><div class="container"><div class="section-head"><div class="eyebrow">Semplice e personale</div><h2>Come funziona</h2><p>Tre passaggi per trasformare la tua idea in qualcosa di unico.</p></div><div class="steps"><div class="step"><div class="number">01</div><h3>Scegli</h3><p>Scegli l'articolo che preferisci o raccontaci cosa vorresti creare.</p></div><div class="step"><div class="number">02</div><h3>Personalizza</h3><p>Indica testi, grafiche, colori e tutti i dettagli che vuoi aggiungere.</p></div><div class="step"><div class="number">03</div><h3>Crea</h3><p>La tua idea prende forma e diventa un articolo pensato proprio per te.</p></div></div></div></section>
+
+<section id="richiesta-personalizzata" class="custom">
+<div class="container">
+<div class="section-head">
+<div class="eyebrow">SU RICHIESTA</div>
+<h2>Non trovi quello che cerchi?</h2>
+<p>
+Se desideri un articolo o una grafica non presenti sul sito, puoi scriverci
+via e-mail descrivendo nel modo più preciso possibile la tua idea.
+Indicaci articolo, colori, nome, frase, grafica e qualsiasi altro dettaglio desiderato.
+</p>
+<a class="btn" href="mailto:latuaidea.store@gmail.com?subject=Richiesta%20personalizzata%20La%20Tua%20Idea">
+INVIA LA TUA IDEA →
+</a>
+</div>
+</div>
+</section>
+
+<section id="contatti" class="contact"><div class="container"><div class="eyebrow">Hai un'idea?</div><h2>Parliamone.</h2><p>Per richieste particolari, articoli non presenti nello shop, grafiche personalizzate o informazioni sulla realizzazione, contattaci via e-mail.</p><a class="btn" href="mailto:latuaidea.store@gmail.com">SCRIVICI VIA E-MAIL →</a></div></section>
+</main><footer>© 2026 La Tua Idea ✦ — Personalizzato · made for you</footer>
+</body></html>
