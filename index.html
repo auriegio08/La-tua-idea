@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Tua Idea — Oggetti Personalizzati</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#fffafc;color:#272227}
+header{padding:20px 7%;display:flex;justify-content:space-between;align-items:center;background:white;position:sticky;top:0;border-bottom:1px solid #f0e5ea}
+.logo{font-size:27px;font-weight:700;color:#b45f7c}.nav a{margin-left:22px;text-decoration:none;color:#333}
+.hero{text-align:center;padding:90px 20px;background:#f9e8ef}
+.hero h1{font-size:54px;margin:0 0 15px}.hero p{font-size:20px;margin-bottom:30px}
+.btn{display:inline-block;padding:14px 25px;border-radius:30px;background:#b45f7c;color:white;text-decoration:none}
+section{padding:65px 7%}.title{text-align:center;font-size:32px;margin-bottom:35px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:white;border-radius:18px;padding:25px;text-align:center;box-shadow:0 5px 20px #eadde2}
+.icon{font-size:45px}.price{font-weight:bold;color:#b45f7c}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:25px;text-align:center}
+.step{padding:20px}.step b{display:block;font-size:20px;margin:10px}
+.contact{text-align:center;background:#f9e8ef}
+footer{text-align:center;padding:30px;background:#302a2e;color:white}
+@media(max-width:600px){.hero h1{font-size:40px}.nav a{margin-left:8px;font-size:13px}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">La Tua Idea ✨</div>
+<nav class="nav"><a href="#shop">Shop</a><a href="#come">Come funziona</a><a href="#contatti">Contatti</a> 🛒</nav>
+</header>
+
+<div class="hero">
+<h1>La Tua Idea</h1>
+<p>Rendi unico ciò che ami. 💕</p>
+<a class="btn" href="#shop">SCOPRI I PRODOTTI</a>
+</div>
+
+<section id="shop">
+<h2 class="title">I nostri prodotti</h2>
+<div class="grid">
+<div class="card"><div class="icon">☕</div><h3>Tazze personalizzate</h3><p>Con nomi, foto e frasi speciali.</p><p class="price">A partire da €14,90</p><a class="btn" href="#contatti">Personalizza</a></div>
+<div class="card"><div class="icon">🎁</div><h3>Regali personalizzati</h3><p>Un regalo creato proprio per quella persona.</p><p class="price">A partire da €9,90</p><a class="btn" href="#contatti">Personalizza</a></div>
+<div class="card"><div class="icon">💖</div><h3>Idee per coppie</h3><p>Ricordi e momenti da trasformare in un regalo.</p><p class="price">A partire da €12,90</p><a class="btn" href="#contatti">Personalizza</a></div>
+</div>
+</section>
+
+<section id="come">
+<h2 class="title">Come funziona?</h2>
+<div class="steps">
+<div class="step"><div class="icon">1️⃣</div><b>Scegli</b><p>Scegli il prodotto che preferisci.</p></div>
+<div class="step"><div class="icon">2️⃣</div><b>Personalizza</b><p>Mandaci nomi, foto, date o frasi.</p></div>
+<div class="step"><div class="icon">3️⃣</div><b>Creiamo</b><p>Realizziamo la tua idea con cura.</p></div>
+<div class="step"><div class="icon">4️⃣</div><b>Ricevi</b><p>Il tuo ordine arriva direttamente a casa.</p></div>
+</div>
+</section>
+
+<section id="contatti" class="contact">
+<h2 class="title">Hai un'idea?</h2>
+<p>Scrivici e raccontaci cosa vuoi creare 💌</p>
+<a class="btn" href="mailto:info@latuaidea.it">CONTATTACI</a>
+</section>
+
+<footer>
+<strong>La Tua Idea</strong><br><br>
+Rendi unico ciò che ami. ✨<br><br>
+© 2026 La Tua Idea
+</footer>
+</body>
+</html>
